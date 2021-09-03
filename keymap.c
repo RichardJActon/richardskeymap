@@ -3,7 +3,8 @@
 enum custom_keycodes {
     Rpipe = SAFE_RANGE,
     saymyname,
-    Req
+    Req,
+    Rreveq
 };
 
 

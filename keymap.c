@@ -4,7 +4,8 @@ enum custom_keycodes {
     Rpipe = SAFE_RANGE,
     saymyname,
     Req,
-    Rreveq
+    Rreveq,
+    Rin
 };
 
 
@@ -84,7 +85,7 @@ ________________________________________________________________________________
 |        |        |        |        |        |        |        |        |        |        |        |        |  <-    |            ||        |
 |________|________|________|________|________|________|________|________|________|________|________|________|________|____________||________|
 |            |        |        |        |        |        |        |        |        |        |        |        |        |        ||        |
-|            |        |        |        |        |        |        |        |        |        |        |        |        |  %>%   ||  name  |
+|            |        |        |        |        |        |        |        |  %in%  |        |        |        |        |  %>%   ||  name  |
 |____________|________|________|________|________|________|________|________|________|________|________|________|________|________||________|
   |            |        |        |        |        |        |        |        |        |        |        |        |            |   |        |
   |    CAPS    |        |        |        |        |        |        |        |        |        |        |        |            |   |        |
@@ -104,7 +105,7 @@ ________________________________________________________________________________
   [2] = LAYOUT(
     KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, Req, KC_TRNS,     KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, Rpipe, saymyname,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, Rin, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, Rpipe, saymyname,
           KC_CAPS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS,     KC_TRNS,
               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS,  KC_TRNS,
           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS,          KC_BSPC,      KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS,  KC_TRNS, KC_TRNS
@@ -116,10 +117,10 @@ ________________________________________________________________________________
 |        |        |        |        |        |        |        |        |        |        |        |        |        |            ||        |
 |________|________|________|________|________|________|________|________|________|________|________|________|________|____________||________|
 |        |        |        |        |        |        |        |        |        |        |        |        |        |            ||        |
-|        |        |        |        |        |        |        |        |        |        |        |        |        |            ||        |
+|        |        |        |        |        |        |        |        |        |        |        |        |   <-   |            ||        |
 |________|________|________|________|________|________|________|________|________|________|________|________|________|____________||________|
 |            |        |        |        |        |        |        |        |        |        |        |        |        |        ||        |
-|            |        |        |        |        |        |        |        |        |        |        |        |        |        ||        |
+|            |        |        |        |        |        |        |        |  %in%  |        |        |        |        |  %>%   ||        |
 |____________|________|________|________|________|________|________|________|________|________|________|________|________|________||________|
   |            |        |        |        |        |        |        |        |        |        |        |        |            |   |        |
   |            |        |        |        |        |        |        |        |        |        |        |        |            |   |        |
@@ -138,8 +139,8 @@ ________________________________________________________________________________
 
   [3] = LAYOUT(
     KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, Req, KC_TRNS,     KC_TRNS,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, Rin, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, Rpipe, KC_TRNS,
           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS,     KC_TRNS,
               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS,  KC_TRNS,
           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS,          Rreveq,      KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS,  KC_TRNS, KC_TRNS
@@ -166,6 +167,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 				// when keycode is released
 			}
 			break;
+
 		case Rreveq:
 			if (record->event.pressed) {
 				// when keycode Rreveq is pressed
@@ -174,7 +176,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 				// when keycode is released
 			}
 			break;
-
+	
+		case Rin:
+			if (record->event.pressed) {
+				// when keycode Rin is pressed
+				SEND_STRING("%in%");
+			} else {
+				// when keycode is released
+			}
+			break;
 
 		case saymyname:
 	        	if (record->event.pressed) {

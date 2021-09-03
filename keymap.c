@@ -109,13 +109,39 @@ ________________________________________________________________________________
           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS,          KC_BSPC,      KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS,  KC_TRNS, KC_TRNS
   ),
 
+/* Layer 1, function layer
+__________________________________________________________________________________________________________________________________  ________
+|        |        |        |        |        |        |        |        |        |        |        |        |        |            ||        |
+|        |        |        |        |        |        |        |        |        |        |        |        |        |            ||        |
+|________|________|________|________|________|________|________|________|________|________|________|________|________|____________||________|
+|        |        |        |        |        |        |        |        |        |        |        |        |        |            ||        |
+|        |        |        |        |        |        |        |        |        |        |        |        |        |            ||        |
+|________|________|________|________|________|________|________|________|________|________|________|________|________|____________||________|
+|            |        |        |        |        |        |        |        |        |        |        |        |        |        ||        |
+|            |        |        |        |        |        |        |        |        |        |        |        |        |        ||        |
+|____________|________|________|________|________|________|________|________|________|________|________|________|________|________||________|
+  |            |        |        |        |        |        |        |        |        |        |        |        |            |   |        |
+  |            |        |        |        |        |        |        |        |        |        |        |        |            |   |        |
+  |____________|________|________|________|________|________|________|________|________|________|________|________|____________|___|________|
+  |                |        |        |        |        |        |        |        |        |        |        |            |        |
+  |                |        |        |        |        |        |        |        |        |        |        |            |        |
+  |________________|________|________|________|________|________|________|________|________|________|________|____________|________|_________
+  |            |        |       |        |                 |                 |        |        |             |   |        |        |        |
+  |            |        |       |        |                 |       ->        |        |        |             |   |        |        |        |
+  |____________|________|_______|________|_________________|_________________|________|________|_____________|   |________|________|________|
+
+* 'RESET' resets the controller and puts the board into firmware flashing mode. If this key is hit accidentally, just unplug the board
+*        and plug it back in.
+*/
+
+
   [3] = LAYOUT(
     KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS,     KC_TRNS,
               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS,  KC_TRNS,
-          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS,          KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS,  KC_TRNS, KC_TRNS
+          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS,          Rreveq,      KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS,  KC_TRNS, KC_TRNS
   ),
 };
 
@@ -127,25 +153,34 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 				// when keycode Rpipe is pressed
 				SEND_STRING("%>%");
 			} else {
-				// when keycode QMKBEST is released
+				// when keycode is released
 			}
 			break;
 
 		case Req:
 			if (record->event.pressed) {
-				// when keycode Rpipe is pressed
+				// when keycode Req is pressed
 				SEND_STRING("<-");
 			} else {
-				// when keycode QMKBEST is released
+				// when keycode is released
+			}
+			break;
+		case Rreveq:
+			if (record->event.pressed) {
+				// when keycode Rreveq is pressed
+				SEND_STRING("->");
+			} else {
+				// when keycode is released
 			}
 			break;
 
+
 		case saymyname:
 	        	if (record->event.pressed) {
-				// when keycode Rpipe is pressed
+				// when keycode saymyname is pressed
 				SEND_STRING("Richard J. Acton");
 			} else {
-				// when keycode QMKBEST is released
+				// when keycode is released
 			}
 			break;
 	}

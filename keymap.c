@@ -45,16 +45,16 @@ ________________________________________________________________________________
     /* Layer 1, function layer
 __________________________________________________________________________________________________________________________________  ________
 |        |        |        |        |        |        |        |        |        |        |        |        |        |            || PLAY/  |
-| RESET  |        |        |        |        |        |        |        |        |        |        |        |        |            || PAUSE  |
+| RESET  |  F13   |  F14   |  F15   |  F16   |  F17   |  F18   |  F19   |  F20   |  F21   |  F22   |  F23   |  F24   |            || PAUSE  |
 |________|________|________|________|________|________|________|________|________|________|________|________|________|____________||________|
 |        |        |        |        |        |        |        |        |        |        |  LED   |  LED   |  LED   |            || VOLUME |
 |        |        |        |        |        |        |        |        |        |        | TOGGLE |  DOWN  |  UP    |            ||   UP   |
 |________|________|________|________|________|________|________|________|________|________|________|________|________|____________||________|
 |            |        |        |        |        |        |        |        |        |        |        |        |        |        || VOLUME |
-|PRINT SCREEN|        |        |        |        |        |  HOME  |  PGDN  |  PGUP  |  END   |        |        |        |        ||  DOWN  |
+|PRINT SCREEN|        |   UP   |        |        |        |  HOME  |  PGDN  |  PGUP  |  END   |        |        |        |        ||  DOWN  |
 |____________|________|________|________|________|________|________|________|________|________|________|________|________|________||________|
   |            |        |        |        |        |        |        |        |        |        |        |        |            |   |        |
-  |    CAPS    |        |        |        |        |        |  LEFT  |  DOWN  |   UP   | RIGHT  |        |        |            |   |  MUTE  |
+  |    CAPS    |  LEFT  |  DOWN  | RIGHT  |        |        |  LEFT  |  DOWN  |   UP   | RIGHT  |        |        |            |   |  MUTE  |
   |____________|________|________|________|________|________|________|________|________|________|________|________|____________|___|________|
   |                |        |        |        |        |        |        |        |        |        |        |            |        |
   |                |        |        |        |        |        |        |        |        |        |        |            |  PGUP  |
@@ -68,10 +68,10 @@ ________________________________________________________________________________
 */
 
   [1] = LAYOUT(
-    RESET,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_MPLY,
+    RESET,   KC_F13, KC_F14, KC_F15, KC_F16, KC_F17, KC_F18, KC_F19, KC_F20, KC_F21, KC_F22, KC_F23, KC_F24, KC_TRNS,     KC_MPLY,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RGB_TOG, RGB_VAD, RGB_VAI, KC_TRNS,     KC_VOLU,
-        KC_PSCR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_VOLD,
-          KC_CAPS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_TRNS, KC_TRNS,    KC_TRNS,     KC_MUTE,
+        KC_PSCR, KC_TRNS, KC_UP, KC_TRNS, KC_TRNS, KC_TRNS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_VOLD,
+          KC_CAPS, KC_LEFT, KC_DOWN, KC_RGHT, KC_TRNS, KC_TRNS, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_TRNS, KC_TRNS,    KC_TRNS,     KC_MUTE,
               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS,  KC_PGUP,
           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS,          KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS,       KC_HOME,  KC_PGDN, KC_END
   ),
@@ -79,7 +79,7 @@ ________________________________________________________________________________
     /* Layer 1, function layer
 __________________________________________________________________________________________________________________________________  ________
 |        |        |        |        |        |        |        |        |        |        |        |        |        |            ||        |
-|        |        |        |        |        |        |        |        |        |        |        |        |        |            ||        |
+| POWER  |  F13   |  F14   |  F15   |  F16   |  F17   |  F18   |  F19   |  F20   |  F21   |  F22   |  F23   |  F24   |            ||        |
 |________|________|________|________|________|________|________|________|________|________|________|________|________|____________||________|
 |        |        |        |        |        |        |        |        |        |        |        |        |        |            ||        |
 |        |        |        |        |        |        |        |        |        |        |        |        |  <-    |            ||        |
@@ -103,7 +103,7 @@ ________________________________________________________________________________
 
 
   [2] = LAYOUT(
-    KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS,
+    KC_POWER,   KC_F13, KC_F14, KC_F15, KC_F16, KC_F17, KC_F18, KC_F19, KC_F20, KC_F21, KC_F22, KC_F23, KC_F24, KC_TRNS,     KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, Req, KC_TRNS,     KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, Rin, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, Rpipe, saymyname,
           KC_CAPS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS,     KC_TRNS,
